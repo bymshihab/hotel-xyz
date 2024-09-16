@@ -50,7 +50,7 @@ function createHeader() {
                 <div class="header__top__right">
                   <div class="header__top__auth">
                     <ul>
-                      <li><a href="#">Login</a></li>
+                      <li><a href="/login-register.html">Login</a></li>
                       <li><a href="#">Register</a></li>
                     </ul>
                   </div>
