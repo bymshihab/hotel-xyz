@@ -1,6 +1,6 @@
 function createHeader() {
   const headerHTML = `
-    <header class="header">
+   
         <div class="header__top">
           <div class="container">
             <div class="row">
@@ -70,7 +70,7 @@ function createHeader() {
             </div>
           </div>
         </div>
-      </header>
+    
     `;
 
   // Inject the header HTML into the div with the ID of 'header'
@@ -78,4 +78,24 @@ function createHeader() {
 }
 
 // Call the function to create the header on page load
-createHeader();
+document.addEventListener("DOMContentLoaded", function () {
+  createHeader();
+  //Canvas Menu
+  $(".canvas__open").on("click", function () {
+    $(".offcanvas-menu-wrapper").addClass("active");
+    $(".offcanvas-menu-overlay").addClass("active");
+  });
+
+  $(".offcanvas-menu-overlay").on("click", function () {
+    $(".offcanvas-menu-wrapper").removeClass("active");
+    $(".offcanvas-menu-overlay").removeClass("active");
+  });
+
+  /*------------------
+		Navigation
+	--------------------*/
+  $(".menu__class").slicknav({
+    appendTo: "#mobile-menu-wrap",
+    allowParentLinks: true,
+  });
+});

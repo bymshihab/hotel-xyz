@@ -26,24 +26,24 @@
     $(this).css("background-image", "url(" + bg + ")");
   });
 
-  //Canvas Menu
-  $(".canvas__open").on("click", function () {
-    $(".offcanvas-menu-wrapper").addClass("active");
-    $(".offcanvas-menu-overlay").addClass("active");
-  });
+  // //Canvas Menu
+  // $(".canvas__open").on("click", function () {
+  //   $(".offcanvas-menu-wrapper").addClass("active");
+  //   $(".offcanvas-menu-overlay").addClass("active");
+  // });
 
-  $(".offcanvas-menu-overlay").on("click", function () {
-    $(".offcanvas-menu-wrapper").removeClass("active");
-    $(".offcanvas-menu-overlay").removeClass("active");
-  });
+  // $(".offcanvas-menu-overlay").on("click", function () {
+  //   $(".offcanvas-menu-wrapper").removeClass("active");
+  //   $(".offcanvas-menu-overlay").removeClass("active");
+  // });
 
-  /*------------------
-		Navigation
-	--------------------*/
-  $(".menu__class").slicknav({
-    appendTo: "#mobile-menu-wrap",
-    allowParentLinks: true,
-  });
+  // /*------------------
+  // 	Navigation
+  // --------------------*/
+  // $(".menu__class").slicknav({
+  //   appendTo: "#mobile-menu-wrap",
+  //   allowParentLinks: true,
+  // });
 
   /*--------------------------
         Gallery Slider
