@@ -30,8 +30,8 @@ function createHeader() {
         </div>
         <div class="offcanvas__auth">
           <ul>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Register</a></li>
+            <li><a href="/login-register.html">Login</a></li>
+            <li><a href="/login-register.html">Register</a></li>
           </ul>
         </div>
       </div>
@@ -96,7 +96,7 @@ function createHeader() {
                     </ul>
                   </nav>
                   <div class="header__nav__widget">
-                    <a href="#">Book Now <span class="arrow_right"></span></a>
+                    <a href="/login-register.html">Book Now <span class="arrow_right"></span></a>
                   </div>
                 </div>
               </div>

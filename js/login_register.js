@@ -1,44 +1,3 @@
-// document.addEventListener('DOMContentLoaded', function () {
-//     showForm('login');
-
-//     document.getElementById('loginForm').addEventListener('submit', function (event) {
-//         event.preventDefault();
-//         // Add login form submission logic here
-//         alert('Login form submitted!');
-//     });
-
-//     document.getElementById('registerForm').addEventListener('submit', function (event) {
-//         event.preventDefault();
-
-//         const password = document.getElementById('registerPassword').value;
-//         const confirmPassword = document.getElementById('registerConfirmPassword').value;
-
-//         if (password !== confirmPassword) {
-//             alert('Passwords do not match!');
-//             return;
-//         }
-
-//         // Add registration form submission logic here
-//         alert('Registration form submitted!');
-//     });
-// });
-
-// function showForm(formType) {
-//     const forms = document.querySelectorAll('.form-content');
-//     const buttons = document.querySelectorAll('.tab-button');
-
-//     forms.forEach(form => {
-//         form.classList.remove('active');
-//     });
-
-//     buttons.forEach(button => {
-//         button.classList.remove('active');
-//     });
-
-//     document.getElementById(`${formType}-form`).classList.add('active');
-//     document.querySelector(`.tab-button[onclick="showForm('${formType}')"]`).classList.add('active');
-// }
-
 document.addEventListener("DOMContentLoaded", function () {
   showForm("login");
 
@@ -60,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
           storedUser.password === loginPassword
         ) {
           alert("Login successful!");
+          window.location.href = "reservation.html";
         } else {
           alert("Invalid email or password.");
         }
