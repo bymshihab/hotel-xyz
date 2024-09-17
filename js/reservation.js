@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
       totalRooms--;
       totalRoomsElement.textContent = totalRooms; // Update total rooms display
 
-      // Show reservation success message
       reservationStatus.textContent = `
       Reservation successful for ${adults} adults and ${children} children from ${fromDate} to ${toDate}.`;
-      // reservationStatus.style.color = "#28a745"; // Green color for success message
+      reservationStatus.classList.remove("error");
+      reservationStatus.classList.add("success");
 
       // Reset form after submission
       setTimeout(function () {
@@ -35,7 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // Show failure message when no rooms are available
       reservationStatus.textContent = "No rooms available!";
-      reservationStatus.style.color = "#dc3545"; // Red color for error message
+      reservationStatus.classList.remove("success");
+      reservationStatus.classList.add("error");
     }
   });
 });
