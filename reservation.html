@@ -7,41 +7,54 @@
     <link rel="stylesheet" href="/css/reservation.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Hotel Room Reservation</h1>
-      <div class="room-info">
-        <h2>Total Available Rooms: <span id="totalRooms">10</span></h2>
+    <div class="full-container_reservation">
+      <div class="user-text">
+        <div class="user-details">
+          <p>Hi <span>Shihab</span>, Welcome to our Hotel</p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium
+            facilis molestiae corrupti laborum blanditiis quia officia
+            repudiandae, eligendi laboriosam fugit sint at ab, placeat sed et
+            culpa reiciendis incidunt quisquam!
+          </p>
+        </div>
       </div>
+      <div class="container">
+        <h1>Hotel Room Reservation</h1>
+        <div class="room-info">
+          <h2>Total Available Rooms: <span id="totalRooms">10</span></h2>
+        </div>
 
-      <form id="reservationForm">
-        <label for="fromDate">CheckIn:</label>
-        <input type="date" id="fromDate" required />
+        <form id="reservationForm">
+          <label for="fromDate">CheckIn:</label>
+          <input type="date" id="fromDate" required />
 
-        <label for="toDate"> Checkout:</label>
-        <input type="date" id="toDate" required />
+          <label for="toDate"> Checkout:</label>
+          <input type="date" id="toDate" required />
 
-        <label for="adults">Adults:</label>
-        <input type="number" id="adults" min="1" value="1" required />
+          <label for="adults">Adults:</label>
+          <input type="number" id="adults" min="1" value="1" required />
 
-        <label for="children">Children:</label>
-        <input type="number" id="children" min="0" value="0" required />
+          <label for="children">Children:</label>
+          <input type="number" id="children" min="0" value="0" required />
 
-        <button type="submit">Reserve Room</button>
-      </form>
+          <button type="submit">Reserve Room</button>
+        </form>
 
-      <!-- <div id="reservationStatus" class="status"></div> -->
+        <!-- <div id="reservationStatus" class="status"></div> -->
 
-      <div class="alert alert-success d-flex align-items-center" role="alert">
-        <svg
-          class="bi flex-shrink-0 me-2"
-          width="24"
-          height="24"
-          role="img"
-          aria-label="Success:"
-        >
-          <use xlink:href="#check-circle-fill" />
-        </svg>
-        <div id="reservationStatus" class="status"></div>
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+          <svg
+            class="bi flex-shrink-0 me-2"
+            width="24"
+            height="24"
+            role="img"
+            aria-label="Success:"
+          >
+            <use xlink:href="#check-circle-fill" />
+          </svg>
+          <div id="reservationStatus" class="status"></div>
+        </div>
       </div>
     </div>
 

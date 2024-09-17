@@ -1,7 +1,9 @@
 body {
   font-family: "Poppins", sans-serif;
-  background: url("https://plus.unsplash.com/premium_photo-1661964071015-d97428970584?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+  background: url("https://plus.unsplash.com/premium_photo-1661953124283-76d0a8436b87?q=80&w=2088&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
     no-repeat center center fixed;
+  /* background: url("https://plus.unsplash.com/premium_photo-1661964071015-d97428970584?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+    no-repeat center center fixed; */
   background-size: cover; /* Ensures the image covers the entire background */
   display: flex;
   justify-content: center;
@@ -120,4 +122,51 @@ h2 {
 #reservationStatus.hide {
   opacity: 0;
   visibility: hidden;
+}
+
+/* full container */
+.full-container_reservation {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px; /* Space between user-text and the rest of the content */
+}
+
+.user-text {
+  flex: 7; /* Takes up 1/4 of the available space */
+  max-width: 70%; /* Restricts the width to 1/4 of the container */
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  flex: 5; /* Takes up the remaining 3/4 of the available space */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* .user-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+@media (max-width: 768px) {
+  .full-container_reservation {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user-text,
+  .container {
+    max-width: 100%;
+    flex: none;
+  }
 }
