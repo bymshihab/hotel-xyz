@@ -24,6 +24,7 @@
 8.  Latest Blog Section
 9.  Contact
 10.  Footer Style
+11. AnimationText
 -------------------------------------------------------------------*/
 
 /*----------------------------------------*/
@@ -3325,6 +3326,27 @@ ol {
     height: 450px;
   }
 }
+
+/* Animation text */
+*[text-split] {
+  opacity: 0; /* Initially hidden */
+}
+
+html.w-editor *[text-split] {
+  opacity: 1; /* For editor environments */
+}
+
+.word {
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+  transform-origin: bottom;
+}
+
+.char {
+  font-size: 3rem;
+}
+/* end text animation */
 
 /* Small Device */
 
