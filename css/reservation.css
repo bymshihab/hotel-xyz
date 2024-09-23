@@ -151,11 +151,9 @@ h2 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* .user-details {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+.user-details {
+  border: 1px solid red;
+}
 
 @media (max-width: 768px) {
   .full-container_reservation {
