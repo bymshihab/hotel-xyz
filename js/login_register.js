@@ -26,11 +26,16 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           if (user) {
-            console.log(user.email, user.password);
-            alert("Login successful!");
-            window.location.href = "reservation.html"; // Redirect to reservation page
+            // console.log(user.email, user.password);
+            // alert("Login successful!");
+
+            if (user.name !== "admin") {
+              window.location.href = "reservation.html"; // Redirect to reservation page
+            } else {
+              window.location.href = "/admin_dasboard.html";
+            }
           } else {
-            console.log(user.email, user.password);
+            // console.log(user.email, user.password);
 
             alert("Invalid email or password.");
           }
@@ -60,11 +65,11 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // Save user data to localStorage
       const user = {
         name: registerName,
         email: registerEmail,
         password: registerPassword,
+        isActive: true,
       };
 
       // Send the data to json-server

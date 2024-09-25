@@ -4,26 +4,53 @@
       "name": "shihab",
       "email": "shihab@01",
       "password": "1234",
-      "id": "1"
+      "id": "1",
+      "isActive": false
     },
     {
       "name": "khaled",
-      "email": "khaloed@01",
+      "email": "khaled@01",
       "password": "12356",
-      "id": "2"
+      "id": "2",
+      "isActive": true
     },
     {
       "name": "admin",
       "email": "admin@01",
       "password": "1234",
       "id": "3",
-      "admin": "true"
+      "admin": true,
+      "isActive": true
     },
     {
-      "id": "37db",
+      "id": "4 ",
       "name": "Sohel",
       "email": "sohel@01",
-      "password": "1234@01"
+      "password": "1234@01",
+      "isActive": true
+    },
+    {
+      "id": "ec0a",
+      "name": "Rashid",
+      "email": "r@gmail.com",
+      "password": "1234",
+      "isActive": true
+    },
+    {
+      "id": "bc6b",
+      "name": "Tahmid",
+      "email": "khaledshihab221@gmail.com",
+      "password": "1234",
+      "isActive": true
+    }
+  ],
+  "foods": [
+    {
+      "id": "1",
+      "name": "dasdsa",
+      "description": "dsaads",
+      "price": "23",
+      "isActive": true
     }
   ]
 }

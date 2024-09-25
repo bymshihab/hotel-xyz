@@ -1,0 +1,19 @@
+.sidebar {
+  width: 20rem !important;
+}
+
+/* Default button styles */
+/* #userListBtn, #foodMenuBtn {
+    background-color: #f0f0f0;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+  } */
+
+/* Active tab styles */
+.active-tab {
+  background-color: #007bff; /* Change to the color you want */
+  color: white;
+  border: 1px solid #007bff;
+}
