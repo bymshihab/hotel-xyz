@@ -10,22 +10,35 @@ document.addEventListener("DOMContentLoaded", function () {
       const loginEmail = document.getElementById("loginEmail").value;
       const loginPassword = document.getElementById("loginPassword").value;
 
-      // Get user data from localStorage
-      const storedUser = JSON.parse(localStorage.getItem("user"));
+      // Fetch all users from the json-server and check credentials
+      fetch("http://localhost:3000/users")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to fetch users");
+          }
+          return response.json();
+        })
+        .then((users) => {
+          // Find the user with the matching email and password
+          const user = users.find(
+            (user) =>
+              user.email === loginEmail && user.password === loginPassword
+          );
 
-      if (storedUser) {
-        if (
-          storedUser.email === loginEmail &&
-          storedUser.password === loginPassword
-        ) {
-          alert("Login successful!");
-          window.location.href = "reservation.html";
-        } else {
-          alert("Invalid email or password.");
-        }
-      } else {
-        alert("No user found. Please register first.");
-      }
+          if (user) {
+            console.log(user.email, user.password);
+            alert("Login successful!");
+            window.location.href = "reservation.html"; // Redirect to reservation page
+          } else {
+            console.log(user.email, user.password);
+
+            alert("Invalid email or password.");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("An error occurred. Please try again later.");
+        });
     });
 
   // Handle register form submission
@@ -54,12 +67,30 @@ document.addEventListener("DOMContentLoaded", function () {
         password: registerPassword,
       };
 
-      localStorage.setItem("user", JSON.stringify(user));
-      alert("Registration successful! You can now log in.");
-
-      // Clear the form
-      document.getElementById("registerForm").reset();
-      showForm("login"); // Automatically switch to login form after registration
+      // Send the data to json-server
+      fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to register user");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          alert("Registration successful! You can now log in.");
+          // Optionally, switch to the login form or perform other actions
+          document.getElementById("registerForm").reset();
+          showForm("login");
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("Registration failed. Please try again.");
+        });
     });
 });
 

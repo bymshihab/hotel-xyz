@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "name": "shihab",
+      "email": "shihab@01",
+      "password": "1234",
+      "id": "1"
+    },
+    {
+      "name": "khaled",
+      "email": "khaloed@01",
+      "password": "12356",
+      "id": "2"
+    },
+    {
+      "name": "admin",
+      "email": "admin@01",
+      "password": "1234",
+      "id": "3",
+      "admin": "true"
+    },
+    {
+      "id": "37db",
+      "name": "Sohel",
+      "email": "sohel@01",
+      "password": "1234@01"
+    }
+  ]
+}
