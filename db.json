@@ -47,9 +47,100 @@
   "foods": [
     {
       "id": "1",
-      "name": "dasdsa",
-      "description": "dsaads",
-      "price": "23",
+      "name": "Pancakes",
+      "description": "Fluffy pancakes with syrup and butter.",
+      "price": "8",
+      "isActive": false
+    },
+    {
+      "id": "2",
+      "name": "Scrambled Eggs",
+      "description": "Creamy scrambled eggs with toast.",
+      "price": "6",
+      "isActive": false
+    },
+    {
+      "id": "3",
+      "name": "Oatmeal ",
+      "description": "Healthy oatmeal topped with fruits and honey.",
+      "price": "5",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Fruit Salad",
+      "description": "Fresh seasonal fruit salad.",
+      "price": "7",
+      "isActive": false
+    },
+    {
+      "id": "5",
+      "name": "Grilled Chicken",
+      "description": "Juicy grilled chicken served with veggies.",
+      "price": "12",
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "name": "Caesar Salad",
+      "description": "Classic Caesar salad with croutons and cheese.",
+      "price": "10",
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "name": "Rice & Beans",
+      "description": "Steamed rice with seasoned beans.",
+      "price": "8",
+      "isActive": true
+    },
+    {
+      "id": "8",
+      "name": "Veggie Wrap",
+      "description": "Fresh vegetables wrapped in a soft tortilla.",
+      "price": "7",
+      "isActive": true
+    },
+    {
+      "id": "9",
+      "name": "Steak",
+      "description": "Tender steak grilled to perfection.",
+      "price": "18",
+      "isActive": true
+    },
+    {
+      "id": "10",
+      "name": "Grilled Salmon",
+      "description": "Freshly grilled salmon served with lemon butter sauce.",
+      "price": "16",
+      "isActive": false
+    },
+    {
+      "id": "11",
+      "name": "Mashed Potatoes",
+      "description": "Creamy mashed potatoes with garlic.",
+      "price": "5",
+      "isActive": false
+    },
+    {
+      "id": "12",
+      "name": "Roasted Vegetables",
+      "description": "Mixed vegetables roasted with herbs and spices.",
+      "price": "7",
+      "isActive": false
+    },
+    {
+      "id": "121",
+      "name": "Dry Fish",
+      "description": "Healthy fish",
+      "price": "20",
+      "isActive": false
+    },
+    {
+      "id": "122",
+      "name": "Dried Loitta Fish",
+      "description": "Dried marine fish fried with speices",
+      "price": "25",
       "isActive": true
     }
   ]
