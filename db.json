@@ -49,14 +49,14 @@
       "id": "1",
       "name": "Pancakes",
       "description": "Fluffy pancakes with syrup and butter.",
-      "price": "8",
-      "isActive": false
+      "price": "5",
+      "isActive": true
     },
     {
       "id": "2",
       "name": "Scrambled Eggs",
       "description": "Creamy scrambled eggs with toast.",
-      "price": "6",
+      "price": "654",
       "isActive": false
     },
     {
@@ -126,22 +126,89 @@
       "id": "12",
       "name": "Roasted Vegetables",
       "description": "Mixed vegetables roasted with herbs and spices.",
-      "price": "7",
-      "isActive": false
-    },
-    {
-      "id": "121",
-      "name": "Dry Fish",
-      "description": "Healthy fish",
-      "price": "20",
+      "price": "70",
       "isActive": false
     },
     {
       "id": "122",
       "name": "Dried Loitta Fish",
       "description": "Dried marine fish fried with speices",
-      "price": "25",
+      "price": "5",
       "isActive": true
+    }
+  ],
+  "room-pic": [
+    {
+      "id": 1,
+      "roomType": "Premium King Room",
+      "images": [
+        {
+          "imageUrl": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+          "imageUrl": "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+          "imageUrl": "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+          "imageUrl": "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "roomType": "Luxury Room",
+      "images": [
+        {
+          "imageUrl": "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+          "imageUrl": "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+          "imageUrl": "https://images.pexels.com/photos/439227/pexels-photo-439227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+          "imageUrl": "https://images.pexels.com/photos/1669799/pexels-photo-1669799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "roomType": "Double Room",
+      "images": [
+        {
+          "imageUrl": "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+          "imageUrl": "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+          "imageUrl": "https://images.pexels.com/photos/439227/pexels-photo-439227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+          "imageUrl": "https://images.pexels.com/photos/1669799/pexels-photo-1669799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "roomType": "Deluxe Room",
+      "images": [
+        {
+          "imageUrl": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+          "imageUrl": "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+          "imageUrl": "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+          "imageUrl": "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        }
+      ]
     }
   ]
 }

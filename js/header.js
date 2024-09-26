@@ -84,9 +84,9 @@ function createHeader() {
                       <li><a href="./rooms.html">Rooms</a></li>
                       <li><a href="./about.html">About Us</a></li>
                       <li>
-                        <a href="#">Pages</a>
+                        <a href="#">Services</a>
                         <ul class="dropdown">
-                          <li><a href="./about.html">About Us</a></li>
+                          <li><a href="./food.html">Foods</a></li>
                           <li><a href="./room-details.html">Room Details</a></li>
                           <li><a href="./blog-details.html">Blog Details</a></li>
                         </ul>

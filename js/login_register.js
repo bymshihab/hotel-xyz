@@ -28,15 +28,19 @@ document.addEventListener("DOMContentLoaded", function () {
           if (user) {
             // console.log(user.email, user.password);
             // alert("Login successful!");
-
-            if (user.name !== "admin") {
-              window.location.href = "reservation.html"; // Redirect to reservation page
+            if (user.isActive === false) {
+              alert(
+                "You are no longer a valid user. Plase contact with +880111111 Number."
+              );
             } else {
-              window.location.href = "/admin_dasboard.html";
+              if (user.name !== "admin") {
+                window.location.href = "reservation.html"; // Redirect to reservation page
+              } else {
+                window.location.href = "/admin_dasboard.html";
+              }
             }
           } else {
             // console.log(user.email, user.password);
-
             alert("Invalid email or password.");
           }
         })

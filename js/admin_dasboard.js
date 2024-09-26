@@ -109,8 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentFoodId = 1;
 
-  let foodList;
-
   // Fetch and display existing foods from the server on page load
   fetch("http://localhost:3000/foods")
     .then((response) => response.json())
@@ -119,37 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
       foodList = data;
       renderFoodTable();
     });
-
-  // Add new food
-  foodForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const foodName = document.getElementById("foodName").value;
-    const foodDescription = document.getElementById("foodDescription").value;
-    const foodPrice = document.getElementById("foodPrice").value;
-
-    const newFood = {
-      id: currentFoodId++,
-      name: foodName,
-      description: foodDescription,
-      price: foodPrice,
-      isActive: true,
-    };
-
-    // Send POST request to add food to the server
-    fetch("http://localhost:3000/foods", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newFood),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        foodList.push(data); // Add food to the local array after successful addition
-        renderFoodTable();
-        foodForm.reset();
-      });
-  });
 
   // Function to render the food table
   function renderFoodTable() {
@@ -211,15 +178,71 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Global variable to track the editing state
-  let editingFoodId = null;
+  let editingFoodId = null; // Global variable to track editing state
+
+  // Add or Update Food (common submission handler)
+  foodForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const foodName = document.getElementById("foodName").value;
+    const foodDescription = document.getElementById("foodDescription").value;
+    const foodPrice = document.getElementById("foodPrice").value;
+
+    const newFood = {
+      id: editingFoodId === null ? currentFoodId++ : editingFoodId,
+      name: foodName,
+      description: foodDescription,
+      price: foodPrice,
+      isActive: true,
+    };
+
+    // Determine whether it's an 'Add' or 'Update' operation
+    const method = editingFoodId === null ? "POST" : "PUT";
+    const url =
+      editingFoodId === null
+        ? "http://localhost:3000/foods"
+        : `http://localhost:3000/foods/${editingFoodId}`;
+
+    // Send POST/PUT request to server
+    fetch(url, {
+      method: method,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newFood),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (editingFoodId === null) {
+          // Add new food to local list
+          foodList.push(data);
+        } else {
+          // Update the existing food item in the local list
+          const index = foodList.findIndex((f) => f.id === editingFoodId);
+          foodList[index] = data;
+        }
+
+        renderFoodTable(); // Re-render the table
+        foodForm.reset(); // Reset form fields
+        foodFormHeader.textContent = "Add Food"; // Reset header text
+        editingFoodId = null; // Clear editing state
+      })
+      .catch((error) => {
+        console.error("Error handling food item:", error);
+      });
+  });
 
   // Function to edit food item
   window.editFood = function (id) {
     const food = foodList.find((f) => parseInt(f.id) === id);
 
     if (food) {
-      // Pre-fill the form fields with the existing food data
+      // Pre-fill form with existing food data
       document.getElementById("foodName").value = food.name || "";
       document.getElementById("foodDescription").value = food.description || "";
       document.getElementById("foodPrice").value = food.price || "";
@@ -227,76 +250,11 @@ document.addEventListener("DOMContentLoaded", function () {
       // Set the global editingFoodId
       editingFoodId = id;
 
-      foodFormHeader.textContent = "Update Food"; // Change the header text
-
-      // Change form submit behavior to edit
-      foodForm.onsubmit = function (e) {
-        e.preventDefault();
-        // Update the food object with new values from the form
-        food.name = document.getElementById("foodName").value;
-        food.description = document.getElementById("foodDescription").value;
-        food.price = document.getElementById("foodPrice").value;
-
-        // Send PUT request to update the food item on the server
-        fetch(`http://localhost:3000/foods/${editingFoodId}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(food),
-        })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(`Error: ${response.status}`);
-            }
-            return response.json();
-          })
-          .then((data) => {
-            renderFoodTable(); // Re-render the table after the edit
-            foodForm.reset(); // Reset the form after successful submission
-            editingFoodId = null; // Clear editing state
-            foodFormHeader.textContent = "Add Food"; // Reset header text
-            foodForm.onsubmit = addNewFood; // Revert to add new food behavior
-          })
-          .catch((error) => {
-            console.error("Error updating food item:", error);
-          });
-      };
+      foodFormHeader.textContent = "Update Food"; // Change header text
     } else {
       console.error(`Food item with id ${id} not found`);
     }
   };
-
-  // Initial form submit function to add new food
-  function addNewFood(e) {
-    e.preventDefault();
-    const foodName = document.getElementById("foodName").value;
-    const foodDescription = document.getElementById("foodDescription").value;
-    const foodPrice = document.getElementById("foodPrice").value;
-
-    const newFood = {
-      id: editingFoodId,
-      name: foodName,
-      description: foodDescription,
-      price: foodPrice,
-      isActive: true,
-    };
-
-    // Send POST request to add new food to the server
-    fetch("http://localhost:3000/foods", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newFood),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        foodList.push(data);
-        renderFoodTable(); // Re-render the table after adding new food
-        foodForm.reset();
-      });
-  }
 
   // Function to delete food
   window.deleteFood = function (id) {
