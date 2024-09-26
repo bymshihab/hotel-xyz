@@ -35,8 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
               if (user.name !== "admin") {
                 window.location.href = "reservation.html"; // Redirect to reservation page
+                localStorage.setItem("user", JSON.stringify(user));
               } else {
                 window.location.href = "/admin_dasboard.html";
+                // localStorage.setItem("user", JSON.stringify(user));
               }
             }
           } else {

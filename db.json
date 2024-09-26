@@ -137,7 +137,7 @@
       "isActive": true
     }
   ],
-  "room-pic": [
+  "rooms": [
     {
       "id": 1,
       "roomType": "Premium King Room",

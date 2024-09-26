@@ -1,3 +1,10 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background: url("https://plus.unsplash.com/premium_photo-1661953124283-76d0a8436b87?q=80&w=2088&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
@@ -40,7 +47,8 @@ label {
   color: #666;
 }
 
-input {
+input,
+select {
   width: 94%;
   padding: 12px;
   margin-top: 8px;
@@ -132,16 +140,16 @@ h2 {
   gap: 20px; /* Space between user-text and the rest of the content */
 }
 
-.user-text {
-  flex: 7; /* Takes up 1/4 of the available space */
-  max-width: 70%; /* Restricts the width to 1/4 of the container */
+/* .user-text {
+  flex: 7; 
+  max-width: 70%; 
   background-color: #f0f0f0;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   justify-content: center;
   align-items: center;
-}
+} */
 
 .container {
   flex: 5; /* Takes up the remaining 3/4 of the available space */
@@ -151,8 +159,95 @@ h2 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling for user text section */
+.user-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
 .user-details {
-  border: 1px solid red;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.user-details h2 {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.user-details span {
+  color: #e67e22; /* A nice contrasting color for 'Shihab' */
+}
+
+.welcome-message {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.user-info {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Styling for images */
+.image-container {
+  width: 100%;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-box img:hover {
+  transform: scale(1.05);
+}
+
+/* Adding some borders for distinction */
+.border {
+  border: 4px solid #e67e22; /* Accent color for border */
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* Styling for heading image */
+.heading-img {
+  width: 100%;
+  max-width: 800px; /* Limit the image width for medium size */
+  height: auto; /* Maintain aspect ratio */
+  margin: 20px auto; /* Center the image horizontally */
+  display: block; /* Ensure it's treated as a block element */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a soft shadow for depth */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading-img img {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: inherit; /* Ensure border-radius applies to the image */
 }
 
 @media (max-width: 768px) {
