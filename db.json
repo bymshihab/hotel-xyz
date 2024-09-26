@@ -50,7 +50,7 @@
       "name": "Pancakes",
       "description": "Fluffy pancakes with syrup and butter.",
       "price": "5",
-      "isActive": true
+      "isActive": false
     },
     {
       "id": "2",
@@ -70,7 +70,7 @@
       "id": "4",
       "name": "Fruit Salad",
       "description": "Fresh seasonal fruit salad.",
-      "price": "7",
+      "price": "56",
       "isActive": false
     },
     {
@@ -139,7 +139,7 @@
   ],
   "rooms": [
     {
-      "id": 1,
+      "id": "1",
       "roomType": "Premium King Room",
       "images": [
         {
@@ -157,7 +157,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "roomType": "Luxury Room",
       "images": [
         {
@@ -175,7 +175,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "roomType": "Double Room",
       "images": [
         {
@@ -193,7 +193,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "roomType": "Deluxe Room",
       "images": [
         {
