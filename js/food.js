@@ -1,4 +1,7 @@
-fetch("http://localhost:3000/foods")
+let apiUrl = "https://jsonserver-deploy.vercel.app";
+let localApiUrl = "http://localhost:3000";
+
+fetch(`${apiUrl}/foods`)
   .then((response) => response.json())
   .then((data) => {
     // Filter only active food items

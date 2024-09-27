@@ -1,3 +1,6 @@
+const apiUrl = "https://jsonserver-deploy.vercel.app";
+const localApiUrl = "http://localhost:3000";
+
 document.addEventListener("DOMContentLoaded", function () {
   showForm("login");
 
@@ -11,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const loginPassword = document.getElementById("loginPassword").value;
 
       // Fetch all users from the json-server and check credentials
-      fetch("http://localhost:3000/users")
+      fetch(`${apiUrl}/users`)
         .then((response) => {
           if (!response.ok) {
             throw new Error("Failed to fetch users");
@@ -79,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       // Send the data to json-server
-      fetch("http://localhost:3000/users", {
+      fetch(`${apiUrl}/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

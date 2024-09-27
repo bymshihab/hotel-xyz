@@ -1,3 +1,6 @@
+const apiUrl = "https://jsonserver-deploy.vercel.app";
+const localApiUrl = "http://localhost:3000";
+
 // Get references to the buttons and the table divs
 const userListBtn = document.getElementById("userListBtn");
 const foodMenuBtn = document.getElementById("foodMenuBtn");
@@ -33,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const userTableBody = document.getElementById("userTableBody");
 
   // Fetch data from the API
-  fetch("http://localhost:3000/users")
+  fetch(`${apiUrl}/users`)
     .then((response) => response.json())
     .then((data) => {
       // Loop through users and create table rows
@@ -76,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
           toggleButton.classList.toggle("btn-success");
 
           // Send a PATCH/PUT request to update the user status (mock)
-          fetch(`http://localhost:3000/users/${user.id}`, {
+          fetch(`${apiUrl}/users/${user.id}`, {
             method: "PATCH", // Use PATCH to update part of the user object
             headers: {
               "Content-Type": "application/json",
@@ -110,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentFoodId = 1;
 
   // Fetch and display existing foods from the server on page load
-  fetch("http://localhost:3000/foods")
+  fetch(`{apiUrl}/foods`)
     .then((response) => response.json())
     .then((data) => {
       currentFoodId = data.length > 0 ? data[data.length - 1].id + 1 : 1;
@@ -163,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
       food.isActive = !food.isActive;
 
       // Send PUT request to update the food status on the server
-      fetch(`http://localhost:3000/foods/${id}`, {
+      fetch(`${apiUrl}/foods/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -200,8 +203,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const method = editingFoodId === null ? "POST" : "PUT";
     const url =
       editingFoodId === null
-        ? "http://localhost:3000/foods"
-        : `http://localhost:3000/foods/${editingFoodId}`;
+        ? `${apiUrl}/foods`
+        : `${apiUrl}/foods/${editingFoodId}`;
 
     // Send POST/PUT request to server
     fetch(url, {
@@ -259,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to delete food
   window.deleteFood = function (id) {
     // Send DELETE request to remove food from the server
-    fetch(`http://localhost:3000/foods/${id}`, {
+    fetch(`${apiUrl}/foods/${id}`, {
       method: "DELETE",
     }).then(() => {
       foodList = foodList.filter((food) => parseInt(food.id) !== id);
