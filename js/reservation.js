@@ -1,3 +1,5 @@
+const apiUrl = "https://jsonserver-deploy.vercel.app";
+const localApiUrl = "http://localhost:3000";
 document.addEventListener("DOMContentLoaded", function () {
   let totalRooms = 10; // Initial total rooms
   const totalRoomsElement = document.getElementById("totalRooms");
@@ -53,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
   async function fetchRooms() {
     try {
       // Fetching data from the API
-      const response = await fetch("http://localhost:3000/rooms");
+      const response = await fetch(`${apiUrl}/rooms`);
 
       // Checking if the response is OK (status code 200-299)
       if (!response.ok) {
