@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentFoodId = 1;
 
   // Fetch and display existing foods from the server on page load
-  fetch(`{apiUrl}/foods`)
+  fetch(`${apiUrl}/foods`)
     .then((response) => response.json())
     .then((data) => {
       currentFoodId = data.length > 0 ? data[data.length - 1].id + 1 : 1;
