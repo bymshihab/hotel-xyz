@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   function createScrollTrigger2(element, tl) {
     ScrollTrigger.create({
       trigger: element,
-      markers: true, // Enable markers for debugging
+      // markers: true, // Enable markers for debugging
       start: "top 60%",
       end: "bottom 40%",
       onEnter: () => tl.play(),
