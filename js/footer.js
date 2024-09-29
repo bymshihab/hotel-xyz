@@ -29,7 +29,7 @@ function createFooter() {
                           <h4>+8801990637762</h4>
                           <ul>
                               <li>Dhaka, Bangladesh</li>
-                              <li>khaledshihab221@gmail.com</li>
+                              <li>fusionsofttechsolutions@gmail.com</li>
                           </ul>
                           <div class="footer__social">
                               <a href="#"><i class="fa fa-facebook"></i></a>
@@ -80,7 +80,7 @@ function createFooter() {
               <div class="row">
                   <div class="col-lg-7 col-md-7">
                       <div class="footer__copyright__text">
-                          <p>&copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://6644de62f4e2c840f6730436--spontaneous-sfogliatella-e0844e.netlify.app/" target="_blank">AB Tech</a></p>
+                          <p>&copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://6644de62f4e2c840f6730436--spontaneous-sfogliatella-e0844e.netlify.app/" target="_blank">FusionSoft Technologies</a></p>
                       </div>
                   </div>
                   <div class="col-lg-5 col-md-5">
